@@ -9,6 +9,7 @@
 script = ExtResource("1_qxrlw")
 max_fall_speed = 250.0
 penalty_per_miss = 2
+lives = 7
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1798448866]
 position = Vector2(637, 315.00003)

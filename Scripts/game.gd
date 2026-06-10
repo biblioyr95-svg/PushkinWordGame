@@ -1,8 +1,8 @@
 extends Node2D
 
-#const WORD_SCENE = preload("res://scenes/word.tscn")
+const WORD_SCENE = preload("res://scenes/word.tscn")
+#var WORD_SCENE = null
 
-var WORD_SCENE = null
 const DEFAULT_VOLUME = 0.8  # 80% громкости по умолчанию
 const VOLUME_SAVE_PATH = "user://music_volume.save"
 const GAME_DURATION: float = 180.0  # 3 минуты в секундах
@@ -15,9 +15,9 @@ const GAME_DURATION: float = 180.0  # 3 минуты в секундах
 @export var spawn_interval_decrease: float = 0.05
 @export var points_per_word: int = 10
 @export var penalty_per_miss: int = 5
+@export var lives: int = 3
 
 var score: int = 0
-var lives: int = 7
 var current_fall_speed: float
 var current_spawn_interval: float
 var is_paused: bool = false
@@ -51,7 +51,7 @@ func _ready():
 	print("=== ИГРА ЗАПУЩЕНА ===")
 	
 		# Загружаем сцену слова
-	WORD_SCENE = load("res://scenes/word.tscn")
+	#WORD_SCENE = load("res://scenes/word.tscn")
 	if not WORD_SCENE:
 		print("ОШИБКА: Не удалось загрузить word.tscn!")
 		return
