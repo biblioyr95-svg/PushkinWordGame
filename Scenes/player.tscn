@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cq4mcvyn8nlrq"]
+
+[ext_resource type="Script" uid="uid://bs5gi8al1mmnh" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://cwdgj0kruebbr" path="res://Assets/pushkin.png" id="2_cvnsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(96, 127)
+
+[node name="Player" type="Area2D" unique_id=1537882442]
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=780424520]
+scale = Vector2(0.13302755, 0.13302755)
+texture = ExtResource("2_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1727311100]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_cvnsp")

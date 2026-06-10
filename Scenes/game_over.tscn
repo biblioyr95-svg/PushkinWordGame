@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://7vi7sybc4grv"]
+
+[ext_resource type="Script" uid="uid://c7474orqtw5r7" path="res://Scripts/game_over.gd" id="1_ojehl"]
+
+[node name="GameOver" type="Control" unique_id=213967832]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojehl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=201935592]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.101960786, 0.18039216, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1149941055]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -56.0
+offset_right = 65.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1815847030]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.41960785, 0.41960785, 1)
+theme_override_font_sizes/font_size = 52
+text = "КОНЕЦ ИГРЫ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer" unique_id=434266425]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Ваш счёт: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="VBoxContainer" unique_id=1773588139]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8509804, 0.23921569, 1)
+theme_override_font_sizes/font_size = 36
+text = "Рекорд: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1927533808]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "ИГРАТЬ СНОВА"
+
+[node name="ResetButton" type="Button" parent="VBoxContainer" unique_id=1502666478]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.41960785, 0.41960785, 1)
+theme_override_font_sizes/font_size = 28
+text = "СБРОСИТЬ РЕКОРД"

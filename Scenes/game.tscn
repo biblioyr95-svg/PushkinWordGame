@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dommlk1kfoiqa"]
+
+[ext_resource type="Script" uid="uid://u2fuj4n3lwso" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://4sojjk8b157m" path="res://Assets/image (4).jpeg" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://cq4mcvyn8nlrq" path="res://Scenes/player.tscn" id="2_wrm1d"]
+[ext_resource type="AudioStream" uid="uid://5xmbrhafh4nx" path="res://Assets/Pixel-Balloons.ogg" id="3_wrm1d"]
+
+[node name="Game" type="Node2D" unique_id=228308552]
+script = ExtResource("1_qxrlw")
+max_fall_speed = 250.0
+penalty_per_miss = 2
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1798448866]
+position = Vector2(637, 315.00003)
+scale = Vector2(1.2474674, 1.2474674)
+texture = ExtResource("2_3dryh")
+
+[node name="Player" parent="." unique_id=1662034338 instance=ExtResource("2_wrm1d")]
+position = Vector2(80, 649)
+
+[node name="WordsContainer" type="Node2D" parent="." unique_id=343516065]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=959757413]
+wait_time = 2.0
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=1600389511]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1033019676]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1138800708]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 740.0
+offset_bottom = 149.0
+
+[node name="LivesLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=845433408]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Жизни: 3"
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=496082657]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Счёт: 0"
+
+[node name="PauseInfo" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=969868452]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Esc: Пауза / Громкость"
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1695374543]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75012183, 0, 0.036385596, 1)
+theme_override_font_sizes/font_size = 28
+text = "Время: 3:00"
+
+[node name="PauseOverlay" type="ColorRect" parent="CanvasLayer" unique_id=429330018]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseOverlay" unique_id=1003812127]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.5
+offset_top = -68.5
+offset_right = 119.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PauseOverlay/VBoxContainer" unique_id=274875896]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "ПАУЗА"
+
+[node name="Label2" type="Label" parent="CanvasLayer/PauseOverlay/VBoxContainer" unique_id=1586533477]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Громкость"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="CanvasLayer/PauseOverlay/VBoxContainer" unique_id=906910668]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+value = 70.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=113473001]
+stream = ExtResource("3_wrm1d")
+autoplay = true
+parameters/looping = true
