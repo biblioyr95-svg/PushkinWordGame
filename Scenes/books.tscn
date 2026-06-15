@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b2sipuqr31d7c"]
+
+[ext_resource type="Script" uid="uid://b3408b1fa0oii" path="res://Scripts/books.gd" id="1_f1njt"]
+[ext_resource type="Texture2D" uid="uid://x04a7mmed2a5" path="res://Assets/book1.jpg" id="2_tt6q5"]
+[ext_resource type="Texture2D" uid="uid://cgbi0ljy2873s" path="res://Assets/book2.jpg" id="3_ej8ju"]
+[ext_resource type="Texture2D" uid="uid://cs33bqxww7fn3" path="res://Assets/book3.jpg" id="4_mnwie"]
+[ext_resource type="Texture2D" uid="uid://b5wu8nafyfl7k" path="res://Assets/book4.jpg" id="5_3641i"]
+[ext_resource type="Texture2D" uid="uid://b6x6wp0fqxq6c" path="res://Assets/book5.jpg" id="6_su0bb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3aijh"]
+
+[node name="Books" type="Node2D" unique_id=1886243727]
+script = ExtResource("1_f1njt")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1427559440]
+modulate = Color(0.21960784, 0.14509805, 0.31764707, 1)
+scale = Vector2(1279, 720.00006)
+texture = SubResource("CanvasTexture_3aijh")
+
+[node name="Book1" type="Sprite2D" parent="." unique_id=830415751]
+position = Vector2(146, 200.00002)
+scale = Vector2(0.34166664, 0.34166664)
+texture = ExtResource("2_tt6q5")
+
+[node name="Book2" type="Sprite2D" parent="." unique_id=880901286]
+position = Vector2(386, 275.99997)
+scale = Vector2(0.08038733, 0.08038734)
+texture = ExtResource("3_ej8ju")
+
+[node name="Book3" type="Sprite2D" parent="." unique_id=888522500]
+position = Vector2(624, 348)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("4_mnwie")
+
+[node name="Book4" type="Sprite2D" parent="." unique_id=1024638820]
+position = Vector2(871, 420)
+scale = Vector2(0.13824046, 0.13824044)
+texture = ExtResource("5_3641i")
+
+[node name="Book5" type="Sprite2D" parent="." unique_id=883198263]
+position = Vector2(1130, 508.00003)
+scale = Vector2(0.13824046, 0.13824044)
+texture = ExtResource("6_su0bb")
+
+[node name="Label" type="Label" parent="." unique_id=768601799]
+offset_left = 547.0
+offset_top = 58.0
+offset_right = 1259.0
+offset_bottom = 166.0
+theme_override_font_sizes/font_size = 24
+text = "Книги выдаются в зале отраслевой литературы, 210 каб. 
+(Глазов, ПНБ им. В.Г. Короленко, Калинина, 4-а)"
+
+[node name="Button" type="Button" parent="." unique_id=1284378546]
+offset_left = 120.0
+offset_top = 581.0
+offset_right = 348.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 36
+text = "Назад"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

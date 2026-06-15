@@ -56,4 +56,14 @@ text = "Правильные слова - дают баллы.
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BookInfo" type="Button" parent="." unique_id=1899444878]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 598.0
+offset_right = 1234.0
+offset_bottom = 657.0
+theme_override_font_sizes/font_size = 32
+text = "Книги по русскому языку"
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BookInfo" to="." method="_on_book_info_pressed"]
